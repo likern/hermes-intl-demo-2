@@ -6,9 +6,12 @@ import {IntlProvider, FormattedMessage} from 'react-intl';
 import {useLocale} from './hooks';
 import {translations} from './i18n';
 
+const isHermes = () => global.HermesInternal !== null;
+
 function App() {
   return (
     <View style={styles.container}>
+      <Text>{`Is engine Hermes used? ${isHermes()}`}</Text>
       <Text>Open up App.tsx to start working on your app!</Text>
       <Text>
         <FormattedMessage id={'screens.onboarding.0.title'} />
